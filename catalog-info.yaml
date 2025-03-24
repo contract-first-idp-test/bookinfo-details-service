@@ -1,0 +1,29 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: details
+  description: Details Service
+  tags:
+    - java
+  links:
+    - url: https://devspaces.apps.cluster-gdhmz.gdhmz.sandbox183.opentlc.com/?storageType=per-workspace#https://github.com/contract-first-idp-test/bookinfo-details-service
+      title: OpenShift Dev Spaces
+      icon: web
+    - url: https://hawtio-online-hawtio-operator.apps.cluster-gdhmz.gdhmz.sandbox183.opentlc.com/online/discover
+      title: HawtIO
+      icon: web
+  annotations:
+    github.com/project-slug: contract-first-idp-test/bookinfo-details-service
+    backstage.io/kubernetes-id: details
+    backstage.io/kubernetes-label-selector: system=bookinfo
+    janus-idp.io/tekton : details-service
+spec:
+  type: service
+  lifecycle: production
+  owner: group:default/backstage-admins
+  system: system:default/bookinfo
+  
+  providesApis: 
+    - details
+  
+  
